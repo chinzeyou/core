@@ -1,50 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/29 13:51:27 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 14:20:51 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/29 14:22:11 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/29 14:32:17 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char *str = (char *)s;
-    size_t len;
-    len = ft_strlen(str);
-	str = str + len;
-	while (len >= 0)
+	char	*str1;
+	char	*str2;
+	size_t	i;
+	int		diff;
+
+	diff = 0;
+	i = 0;
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	while (str1[i] == str2[i] && i < n)
 	{
-        
-    	if ((char)c == *str)
-		{
-			return (str);
-		}
-		str--;
-        len--;
-		if (len == 0)
-        {
-            break;
-        }
+		i++;
 	}
-	
-	if ((char)c == '\0')
-    {
-        return (str);
-    }
-	return (NULL);
+	diff = str1[i] - str2[i];
+	return (diff);
 }
 
-int main()
+int	main()
 {
 	char s1[] = "Hello";
-	char s2[] = "Hello";
-
-	printf("%s\n", strrchr(s1, 'l'));
-	printf("%s\n", ft_strrchr(s2, 'l'));
+	char s2[] = "Hella";
+	printf("%d\n", strncmp(s1, s2, 5));
+	printf("%d\n", ft_strncmp(s1, s2, 5));
 }

@@ -1,50 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/29 13:51:27 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 14:20:51 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/29 14:48:14 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/29 15:03:32 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *str = (char *)s;
-    size_t len;
-    len = ft_strlen(str);
-	str = str + len;
-	while (len >= 0)
+	const unsigned char	*str1;
+	const unsigned char	*str2;
+	size_t				i;
+	int					diff;
+
+	i = 0;
+	str1 = s1;
+	str2 = s2;
+	if (n == 0)
+		return (0);
+	while (i < n && str1[i] == str2[i])
 	{
-        
-    	if ((char)c == *str)
-		{
-			return (str);
-		}
-		str--;
-        len--;
-		if (len == 0)
-        {
-            break;
-        }
+		i++;
 	}
-	
-	if ((char)c == '\0')
-    {
-        return (str);
-    }
-	return (NULL);
+	diff = str1[i] - str2[i];
+	return (diff);
 }
 
-int main()
+int	main(void)
 {
 	char s1[] = "Hello";
-	char s2[] = "Hello";
-
-	printf("%s\n", strrchr(s1, 'l'));
-	printf("%s\n", ft_strrchr(s2, 'l'));
+	char s2[] = "Jella";
+	printf("%d\n", memcmp(s1, s2, 0));
+	printf("%d\n", ft_memcmp(s1, s2, 0));
 }

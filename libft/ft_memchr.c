@@ -1,50 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/29 13:51:27 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 14:20:51 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/29 14:31:02 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/29 14:47:37 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+void    *ft_memchr(const void *s, int c, size_t n)
 {
-	char *str = (char *)s;
-    size_t len;
-    len = ft_strlen(str);
-	str = str + len;
-	while (len >= 0)
+	const unsigned char *str;
+	unsigned char target;
+	size_t i;
+
+	i = 0;
+	str = s;
+	target = (unsigned char)c;
+	while (i < n)
 	{
-        
-    	if ((char)c == *str)
-		{
-			return (str);
-		}
-		str--;
-        len--;
-		if (len == 0)
-        {
-            break;
-        }
+		if (str[i] == target)
+			return ((void *)(str + i));
+		i++;
 	}
-	
-	if ((char)c == '\0')
-    {
-        return (str);
-    }
 	return (NULL);
 }
 
-int main()
+int	main()
 {
 	char s1[] = "Hello";
 	char s2[] = "Hello";
-
-	printf("%s\n", strrchr(s1, 'l'));
-	printf("%s\n", ft_strrchr(s2, 'l'));
+	
+	printf("%s\n", (char *)memchr(s1, 'l', 5));
+	printf("%s\n", (char *)ft_memchr(s1, 'l', 5));
 }

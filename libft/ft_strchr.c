@@ -6,11 +6,11 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 13:10:40 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 13:49:41 by zchin            ###   ########.fr       */
+/*   Updated: 2026/07/29 14:11:46 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <libft.h>
 
 char *ft_strchr(const char *s, int c)
 {
@@ -29,9 +29,6 @@ char *ft_strchr(const char *s, int c)
     }
 	return (NULL);
 }
-
-#include <string.h>
-#include <stdio.h>
 
 int main()
 {

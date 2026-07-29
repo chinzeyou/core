@@ -1,50 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/29 13:51:27 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 14:20:51 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/29 15:04:45 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/29 15:28:36 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char *str = (char *)s;
-    size_t len;
-    len = ft_strlen(str);
-	str = str + len;
-	while (len >= 0)
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (little[i] == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
 	{
-        
-    	if ((char)c == *str)
+		j = 0;
+		while (big[i + j] == little[j] && (i + j < len))
 		{
-			return (str);
+			if (little[j + 1] == '\0')
+				return ((char *)(big + i));
+			j++;
 		}
-		str--;
-        len--;
-		if (len == 0)
-        {
-            break;
-        }
+		i++;
 	}
-	
-	if ((char)c == '\0')
-    {
-        return (str);
-    }
 	return (NULL);
 }
 
-int main()
+int	main (void)
 {
-	char s1[] = "Hello";
-	char s2[] = "Hello";
+	char *big = "Hello World";
+	char *little = "World";
 
-	printf("%s\n", strrchr(s1, 'l'));
-	printf("%s\n", ft_strrchr(s2, 'l'));
+	printf("%s\n", ft_strnstr(big, little, 13));
 }
