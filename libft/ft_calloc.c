@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/29 16:44:21 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 16:46:24 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/29 16:28:12 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/29 16:48:10 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//add ft_bzero.c
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_calloc(size_t num, size_t size)
 {
-	int				i;
-	unsigned char	*str;
+	void	*allocated_calloc;
+	size_t	total_bytes;
+	size_t	i;
 
-	i = 0;
-	str = s;
-	while (str[i] != '\0' && i < n)
+	allocated_calloc = malloc(num * size);
+	if (allocated_calloc == NULL)
+		return (NULL);
+	ft_bzero(allocated_calloc, size);
+	return (allocated_calloc);
+}
+
+int	main()
+{
+	char *ans;
+	ans = ft_calloc(5, 4);
+	int i = 0;
+	while (i < 5)
 	{
-		str[i] = 0;
+		printf("%d\n", ans[i]);
 		i++;
 	}
+
+	free(ans);
+	return (0);
 }
-/*
-int main()
-{
-    char str[] = "Hello";
-    bzero(str, (0));
-    printf("%s", str);
-    ft_bzero(str, 0);
-    printf("%s", str);
-}
-    */
