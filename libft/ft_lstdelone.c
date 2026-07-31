@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/31 14:18:59 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 17:43:46 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/31 17:04:25 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/31 17:11:30 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != 0)
-	{
-		f(i, &s[i]);
-		i++;
-	}
-}
-
-void	iteration(unsigned int i, char *c)
-{
-	if (*c >= 'a' && *c <= 'z')
-	{
-		*c = *c + i;
-		if (*c > 'z')
-			*c = 'a' + (*c - 'z' - 1);
-	}
-}
-
-int	main(void)
-{
-	char s[] = "abcd";
-	ft_striteri(s, iteration);
-	printf("%s", s);
+	del(lst->content);
+	free(lst);
 }

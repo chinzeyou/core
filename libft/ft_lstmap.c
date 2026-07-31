@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/31 14:18:59 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 17:43:46 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/31 17:31:18 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/31 17:43:04 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != 0)
+	t_list	*new;
+	t_list	*new_obj;
+	if (!lst || !del || !f)
+		return (NULL);
+	while (lst != NULL)
 	{
-		f(i, &s[i]);
-		i++;
+		new_obj = ft_lstnew(f(lst->content));
+		if (!new_obj)
+		{
+			ft_lstclear(&lst, del);
+		}
+		ft_lstadd_back(&new, new_obj);
+		return(new);
 	}
-}
-
-void	iteration(unsigned int i, char *c)
-{
-	if (*c >= 'a' && *c <= 'z')
-	{
-		*c = *c + i;
-		if (*c > 'z')
-			*c = 'a' + (*c - 'z' - 1);
-	}
-}
-
-int	main(void)
-{
-	char s[] = "abcd";
-	ft_striteri(s, iteration);
-	printf("%s", s);
 }

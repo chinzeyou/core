@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/31 14:18:59 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 17:43:46 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/31 16:00:01 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/31 16:04:28 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
+	t_list	*current;
+	int		count;
 
-	i = 0;
-	while (s[i] != 0)
+	current = lst;
+	count = 0;
+	printf("List state: ");
+	while (current != NULL)
 	{
-		f(i, &s[i]);
-		i++;
+		count++;
+		current = current->next;
 	}
-}
-
-void	iteration(unsigned int i, char *c)
-{
-	if (*c >= 'a' && *c <= 'z')
-	{
-		*c = *c + i;
-		if (*c > 'z')
-			*c = 'a' + (*c - 'z' - 1);
-	}
-}
-
-int	main(void)
-{
-	char s[] = "abcd";
-	ft_striteri(s, iteration);
-	printf("%s", s);
+	return (count);
 }

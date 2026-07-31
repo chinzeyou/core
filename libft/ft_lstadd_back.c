@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/31 14:18:59 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 17:43:46 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/31 16:56:08 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/31 17:03:55 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != 0)
+	t_list *last;
+	
+	last = *lst;
+	while (last->next != NULL)
 	{
-		f(i, &s[i]);
-		i++;
+		last = last->next;
 	}
-}
-
-void	iteration(unsigned int i, char *c)
-{
-	if (*c >= 'a' && *c <= 'z')
-	{
-		*c = *c + i;
-		if (*c > 'z')
-			*c = 'a' + (*c - 'z' - 1);
-	}
-}
-
-int	main(void)
-{
-	char s[] = "abcd";
-	ft_striteri(s, iteration);
-	printf("%s", s);
+	last->next = new;
 }

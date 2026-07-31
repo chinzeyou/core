@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/31 14:18:59 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 17:43:46 by zchin            ###   ########.fr       */
+/*   Created: 2026/07/31 17:12:03 by zchin             #+#    #+#             */
+/*   Updated: 2026/07/31 17:31:03 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstclear(t_list **lst, void(*del)(void *))
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != 0)
-	{
-		f(i, &s[i]);
-		i++;
+	t_list	*tmp;
+	if (!lst || !del)
+		return ;
+	while (*lst != NULL)
+	{	
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-}
-
-void	iteration(unsigned int i, char *c)
-{
-	if (*c >= 'a' && *c <= 'z')
-	{
-		*c = *c + i;
-		if (*c > 'z')
-			*c = 'a' + (*c - 'z' - 1);
-	}
-}
-
-int	main(void)
-{
-	char s[] = "abcd";
-	ft_striteri(s, iteration);
-	printf("%s", s);
+	*lst = NULL;
 }
