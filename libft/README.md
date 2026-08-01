@@ -79,9 +79,14 @@ Functions for handling strings:
 - `ft_strjoin` - Joins two strings together.
 - `ft_strtrim` - Removes specified characters from the beginning and end of a string.
 - `ft_split` - Splits a string into an array of strings.
-- `ft_itoa` - Converts an integer into a string.
 - `ft_strmapi` - Applies a function to each character of a string.
 - `ft_striteri` - Iterates through a string and modifies each character.
+
+### Conversion
+Functions for converting data between different representations:
+
+- `ft_atoi` - Converts a string representing an integer into its corresponding int value.
+- `ft_itoa` - Converts an integer into a string.
 
 ### File Descriptor Output
 Functions for writing data to file descriptors:
@@ -112,7 +117,6 @@ Functions for manipulating linked lists:
 - [cppreference.com – C Standard Library](https://en.cppreference.com/w/c) — quick reference for function signatures and semantics.
 - [man7.org Linux man-pages](https://man7.org/linux/man-pages/dir_section_3.html) — man pages for `malloc`, `memcpy`, `strdup`, and other libc functions.
 - 42's own libft subject PDF through intra.
-- [Beej's Guide to C Programming](https://beej.us/guide/bgc/) — general C reference for pointers, memory management, and strings.
 
 
 ### AI usage
