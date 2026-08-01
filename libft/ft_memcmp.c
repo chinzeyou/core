@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 14:48:14 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 15:03:32 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 13:10:05 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	diff = str1[i] - str2[i];
 	return (diff);
 }
-
+/*
 int	main(void)
 {
 	char s1[] = "Hello";
@@ -39,3 +39,4 @@ int	main(void)
 	printf("%d\n", memcmp(s1, s2, 0));
 	printf("%d\n", ft_memcmp(s1, s2, 0));
 }
+	*/

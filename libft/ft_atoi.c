@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:03:59 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 16:23:13 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:35:27 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *nptr)
 }
 
 //#include <limits.h>
-
+/*
 int	main()
 {
 	printf("%d\n", atoi("--21474aa83648"));
@@ -47,3 +47,4 @@ int	main()
 	//printf("%d\n", INT_MAX);
 	printf("%d", ft_atoi("-101"));
 }
+*/

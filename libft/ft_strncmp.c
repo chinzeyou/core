@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 14:22:11 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 14:32:17 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:33:58 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	diff = str1[i] - str2[i];
 	return (diff);
 }
-
+/*
 int	main()
 {
 	char s1[] = "Hello";
@@ -38,3 +38,4 @@ int	main()
 	printf("%d\n", strncmp(s1, s2, 5));
 	printf("%d\n", ft_strncmp(s1, s2, 5));
 }
+	*/

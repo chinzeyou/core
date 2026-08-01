@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 14:31:38 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/30 23:09:01 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:34:48 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ans[i] = '\0';
 	return (ans);
 }
-
+/*
 int	main()
 {
 	char s1[] = "Hello World";
 	printf("%s\n", ft_substr(s1, 2, 10));
 }
+*/

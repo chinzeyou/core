@@ -40,10 +40,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ans[i + j] = '\0';
 	return (ans);
 }
-
+/*
 int	main()
 {
 	char s1[] = "Hello";
 	char s2[] = "World";
 	printf("%s\n", ft_strjoin(s1, s2));
 }
+*/

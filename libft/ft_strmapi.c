@@ -6,19 +6,11 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 14:04:11 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 14:18:16 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 13:05:16 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	iterate(unsigned int i, char c)
-{
-	if (i % 2 == 0)
-		return (ft_toupper((unsigned char)c));
-	else
-		return (ft_tolower((unsigned char)c));
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -37,8 +29,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ans[ft_strlen(s)] = 0;
 	return (ans);
 }
-
+/*
+char	iterate(unsigned int i, char c)
+{
+	if (i % 2 == 0)
+		return (ft_toupper((unsigned char)c));
+	else
+		return (ft_tolower((unsigned char)c));
+}
+		
 int	main()
 {
 	printf("%s", ft_strmapi("Hello", iterate));
 }
+	*/

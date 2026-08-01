@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 17:26:40 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 17:43:46 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 13:13:52 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if ((!lst || !f))
-		return;
+		return ;
 	while (lst != NULL)
 	{
 		f(lst->content);

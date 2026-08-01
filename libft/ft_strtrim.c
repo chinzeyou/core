@@ -6,14 +6,14 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 15:51:52 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/30 23:11:14 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:51:34 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // add ft_strlen.c
 
-int		contains_set(char c, char const *set)
+int	contains_set(char c, char const *set)
 {
 	int	i;
 
@@ -29,7 +29,6 @@ int		contains_set(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	s1_len;
 	size_t	start;
 	size_t	end;
 	size_t	len;
@@ -38,8 +37,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	s1_len = ft_strlen(s1);
-	end = s1_len;
+	end = ft_strlen(s1);
 	while (start < end && contains_set(s1[start], set))
 		start++;
 	while (end > start && contains_set(s1[end - 1], set))
@@ -56,8 +54,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ans[i] = '\0';
 	return (ans);
 }
-
+/*
 int	main()
 {
 	printf("%s\n", ft_strtrim("++Helloz0++", "+zzH0"));
 }
+*/

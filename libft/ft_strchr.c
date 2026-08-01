@@ -6,30 +6,32 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 13:10:40 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 14:11:46 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 13:02:57 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char *str = (char *)s;
+	char	*str;
+
+	str = (char *)s;
 	while (*str != '\0')
 	{
-    	if ((char)c == *str)
+		if ((char)c == *str)
 		{
 			return (str);
 		}
 		str++;
 	}
 	if ((char)c == '\0')
-    {
-        return (str);
-    }
+	{
+		return (str);
+	}
 	return (NULL);
 }
-
+/*
 int main()
 {
 	char s1[] = "Hello";
@@ -38,3 +40,4 @@ int main()
 	printf("%s\n", strchr(s1, 'e'));
 	printf("%s\n", ft_strchr(s2, 101));
 }
+	*/

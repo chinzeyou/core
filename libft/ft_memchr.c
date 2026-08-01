@@ -6,17 +6,17 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 14:31:02 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 14:47:37 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:59:49 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *str;
-	unsigned char target;
-	size_t i;
+	const unsigned char	*str;
+	unsigned char		target;
+	size_t				i;
 
 	i = 0;
 	str = s;
@@ -29,7 +29,7 @@ void    *ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
+/*
 int	main()
 {
 	char s1[] = "Hello";
@@ -38,3 +38,4 @@ int	main()
 	printf("%s\n", (char *)memchr(s1, 'l', 5));
 	printf("%s\n", (char *)ft_memchr(s1, 'l', 5));
 }
+	*/

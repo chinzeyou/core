@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:28:12 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 16:48:41 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:48:05 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_calloc(size_t num, size_t size)
 	ft_bzero(allocated_calloc, size);
 	return (allocated_calloc);
 }
-
+/*
 int	main()
 {
 	char *ans;
@@ -39,3 +39,4 @@ int	main()
 	free(ans);
 	return (0);
 }
+	*/

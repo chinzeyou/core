@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 14:18:59 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 17:43:46 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 13:03:36 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
+/*
 void	iteration(unsigned int i, char *c)
 {
 	if (*c >= 'a' && *c <= 'z')
@@ -40,3 +40,4 @@ int	main(void)
 	ft_striteri(s, iteration);
 	printf("%s", s);
 }
+*/

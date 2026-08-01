@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/01 13:14:57 by zchin             #+#    #+#             */
+/*   Updated: 2026/08/01 13:15:17 by zchin            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include <stdlib.h>
-#include <stddef.h>
+	#include <stdlib.h>
+	#include <stddef.h>
 #include <stdint.h>
 #include <unistd.h>
 

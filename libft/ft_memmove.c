@@ -6,37 +6,38 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 13:51:49 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 13:51:57 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:58:46 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memmove(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memmove(void *restrict dst, const void *restrict src, size_t n)
 {
-    const unsigned char *s = src;
-    unsigned char *d = dst;
-    if (!dst && !src)
-        return (NULL);
+	const unsigned char	*s;
+	unsigned char		*d;
 
-    if (d < s)
-    {
-        *d = *s;
-        d++;
-        s++;
-    }
-    else if (d > s)
-    {
-        while (n > 0)
-        {
-            n--;
-            d[n] = s[n];
-        }
-    }
-    return (dst);
+	s = src;
+	d = dst;
+	if (!dst && !src)
+		return (NULL);
+	if (d < s)
+	{
+		*d = *s;
+		d++;
+		s++;
+	}
+	else if (d > s)
+	{
+		while (n > 0)
+		{
+			n--;
+			d[n] = s[n];
+		}
+	}
+	return (dst);
 }
-
+/*
 int main(void)
 {
 	char str1[20] = "HELLO WORLD";
@@ -50,3 +51,4 @@ int main(void)
 
 	return (0);
 }
+    */

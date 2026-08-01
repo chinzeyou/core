@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 23:40:27 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 00:18:18 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 13:01:35 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,11 @@ char	*copy_word(char const *s, size_t len)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	word_count;
 	size_t	i;
 	size_t	j;
 	char	**ans;
 
-	word_count = w_count(s, c);
-	ans = malloc((word_count + 1) * sizeof(char *));
+	ans = malloc((w_count(s, c) + 1) * sizeof(char *));
 	if (ans == NULL)
 		return (NULL);
 	i = 0;
@@ -88,16 +86,16 @@ char	**ft_split(char const *s, char c)
 	ans[j] = NULL;
 	return (ans);
 }
-
+/*
 int	main()
 {
 	int i = 0;
-	char **ans = ft_split("Hle add d", ' ');
+	char **ans = ft_split("Hle  add d", ' ');
 	printf("%zu\n", w_count("Hello=", ' '));
 	while (i < 4)
 	{
 		printf("%s\n", ans[i]);
 		i++;
 	}
-
 }
+*/

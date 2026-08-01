@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 15:04:45 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 15:28:36 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:34:21 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
+/*
 int	main (void)
 {
 	char *big = "Hello World";
@@ -41,3 +41,4 @@ int	main (void)
 
 	printf("%s\n", ft_strnstr(big, little, 13));
 }
+*/

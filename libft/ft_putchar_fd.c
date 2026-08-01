@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 14:37:27 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/31 14:55:23 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 12:43:14 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-
+/*
 int	main(void)
 {
 	ft_putchar_fd('s', 1);
 	return (1);
 }
+*/
