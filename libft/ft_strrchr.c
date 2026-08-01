@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 13:51:27 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 12:58:17 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 14:31:39 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,16 @@ char	*ft_strrchr(const char *s, int c)
 	str = (char *)s;
 	len = ft_strlen(str);
 	str = str + len;
-	while (len >= 0)
+	while (1)
 	{
-		if ((char)c == *str)
+		if ((unsigned char)c == *str)
 			return (str);
-		str--;
-		len--;
 		if (len == 0)
 		{
 			break ;
 		}
-	}
-	if ((char)c == '\0')
-	{
-		return (str);
+		str--;
+		len--;
 	}
 	return (NULL);
 }

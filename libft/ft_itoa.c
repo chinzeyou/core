@@ -6,23 +6,23 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 13:22:07 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 13:04:34 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 16:26:33 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_len(int n)
+size_t	count_len(long n)
 {
 	size_t	i;
 
 	i = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
 		n = n * -1;
 		i++;
 	}
-	while (n != 0)
+	while (n > 0)
 	{
 		n /= 10;
 		i++;
@@ -30,39 +30,37 @@ size_t	count_len(int n)
 	return (i);
 }
 
-int	is_negative(int *n)
+void	neg_or_zero(char *ans, long *num)
 {
-	if (*n < 0)
+	if (*num < 0)
 	{
-		*n = *n * -1;
-		return (1);
+		ans[0] = '-';
+		*num = -*num;
 	}
-	return (0);
+	if (*num == 0)
+		ans[0] = '0';
 }
 
 char	*ft_itoa(int n)
 {
 	size_t	len;
 	size_t	i;
-	int		is_neg;
 	char	*ans;
+	long	num;
 
-	len = count_len(n);
-	ans = malloc(len * sizeof(char));
+	num = n;
+	len = count_len(num);
+	ans = malloc((len + 1) * sizeof(char));
 	if (ans == NULL)
 		return (NULL);
-	i = 0;
-	is_neg = is_negative(&n);
-	while (n != 0)
+	i = len - 1;
+	if (num <= 0)
+		neg_or_zero(ans, &num);
+	while (num > 0)
 	{
-		if (is_neg == 1)
-		{
-			ans[i] = '-';
-			is_neg = 0;
-		}
-		ans[len - i - 1] = n % 10 + '0';
-		n /= 10;
-		i++;
+		ans[i] = num % 10 + '0';
+		num /= 10;
+		i--;
 	}
 	ans[len] = '\0';
 	return (ans);

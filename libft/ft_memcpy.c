@@ -6,13 +6,13 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/01 12:38:42 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 13:09:22 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 17:31:29 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t				i;
 	const unsigned char	*srcs;

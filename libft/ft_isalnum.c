@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:29:29 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 17:29:54 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 15:55:26 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isalnum(char c)
 		return (1);
 	else if (c >= 'a' && c <= 'z')
 		return (1);
-	else if (c >= 'Z' && c <= 'Z')
+	else if (c >= 'A' && c <= 'Z')
 		return (1);
 	else
 		return (0);

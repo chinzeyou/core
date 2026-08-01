@@ -6,25 +6,25 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:28:12 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 12:48:05 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 17:10:01 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//add ft_bzero.c
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	void	*allocated_calloc;
-	size_t	total_bytes;
-	size_t	i;
+	void	*ptr;
 
-	allocated_calloc = malloc(num * size);
-	if (allocated_calloc == NULL)
+	if (size != 0 && num > SIZE_MAX / size)
 		return (NULL);
-	ft_bzero(allocated_calloc, size);
-	return (allocated_calloc);
+	ptr = malloc(num * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, num * size);
+	return (ptr);
 }
+
 /*
 int	main()
 {

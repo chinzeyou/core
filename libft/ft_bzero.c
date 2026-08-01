@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:44:21 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/29 17:30:58 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 16:22:23 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				i;
-	unsigned char	*str;
+	size_t				i;
+	unsigned char		*str;
 
 	i = 0;
 	str = s;
-	while (str[i] != '\0' && i < n)
+	while (i < n)
 	{
 		str[i] = 0;
 		i++;

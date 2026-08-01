@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:15 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 12:32:54 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/01 15:46:38 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strdup(const char *s)
 	char	*ans;
 
 	len = ft_strlen(s);
-	ans = malloc(len * sizeof(char));
+	ans = malloc((len + 1) * sizeof(char));
 	if (ans == NULL)
 		return (NULL);
-	ft_strlcpy(ans, s, len);
+	ft_strlcpy(ans, s, len + 1);
 	return (ans);
 }
 /*
