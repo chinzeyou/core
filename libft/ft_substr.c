@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 14:31:38 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 15:54:01 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/02 12:27:24 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ans == NULL)
 		return (NULL);
 	i = 0;
-	while (s[start + i] != '\0' && i < len)
+	while (i < len && s[start + i] != '\0' )
 	{
 		ans[i] = s[start + i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 16:00:01 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 13:05:44 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/02 12:09:44 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_lstsize(t_list *lst)
 
 	current = lst;
 	count = 0;
-	printf("List state: ");
 	while (current != NULL)
 	{
 		count++;

@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 15:51:52 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 12:51:34 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/02 13:02:10 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	len;
 	size_t	i;
-	char	*ans;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1);
@@ -43,16 +44,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end > start && contains_set(s1[end - 1], set))
 		end--;
 	len = end - start;
-	ans = malloc(len + 1);
-	if (ans == NULL)
-		return (NULL);
-	while (start + i < end)
-	{
-		ans[i] = s1[start + i];
-		i++;
-	}
-	ans[i] = '\0';
-	return (ans);
+	return (ft_substr(s1, start, len));
 }
 /*
 int	main()

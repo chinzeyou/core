@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 14:32:10 by zchin             #+#    #+#             */
-/*   Updated: 2026/07/30 14:40:02 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/02 12:58:42 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	s1_len;
-	size_t	s2_len;
 	size_t	i;
 	size_t	j;
 	char	*ans;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	ans = malloc(s1_len + s2_len);
+	if (!s1 || !s2)
+		return (NULL);
+	ans = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (ans == NULL)
 		return (NULL);
 	i = 0;
-	while (i < s1_len)
+	while (s1[i] != '\0')
 	{
 		ans[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (j < s2_len)
+	while (s2[j] != '\0')
 	{
 		ans[i + j] = s2[j];
 		j++;

@@ -6,7 +6,7 @@
 /*   By: zchin <zchin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/31 14:04:11 by zchin             #+#    #+#             */
-/*   Updated: 2026/08/01 13:05:16 by zchin            ###   ########.fr       */
+/*   Updated: 2026/08/02 12:49:08 by zchin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*ans;
 
-	ans = malloc(ft_strlen(s) * sizeof(char));
+	if (!s || !f)
+		return (NULL);
+	ans = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (ans == NULL)
 		return (NULL);
 	i = 0;
@@ -26,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ans[i] = (*f)(i, s[i]);
 		i++;
 	}
-	ans[ft_strlen(s)] = 0;
+	ans[i] = '\0';
 	return (ans);
 }
 /*
